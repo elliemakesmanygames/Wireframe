@@ -81,7 +81,7 @@ function WireframeExport.DefineCube(n:number?)
 	Wireframe[8]=Vector3.new(-n,n,-n)
 end
 
-function WireframeExport.Begin(ui:GuiObject):()
+function WireframeExport.Begin(ui:GuiObject):Cleanup
 	if #Wireframe==0 then error("use WireframeExport.DefineCube to define the vertices of your wireframe.") end
 	local tx,ty,tz=0,0,0
 	const connection = RunService.RenderStepped:Connect(function(dt:number) end)
