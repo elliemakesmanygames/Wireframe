@@ -11,17 +11,17 @@ const Wireframe: Wireframe = table.create(8)
 
 const function RotatePitch(v:Vector3,tx:number):Vector3
 	const sin,cos=math.sin(tx),math.cos(tx)
-	return Vector3.new(v.X,cos*v.Y-sin*v.Y,sin*v.Z+cos*v.Z)
+	return Vector3.new(v.X, (cos * v.Y) - (sin * v.Z), (sin * v.Y) + (cos * v.Z))
 end
 
 const function RotateYaw(v:Vector3,ty:number):Vector3
 	const sin,cos=math.sin(ty),math.cos(ty)
-	return Vector3.new(sin*v.X+cos*v.X,v.Y,sin*v.Z+cos*v.Z)
+	return Vector3.new((cos * v.X) + (sin * v.Z), v.Y, -(sin * v.X) + (cos * v.Z))
 end
 
 const function RotateRoll(v:Vector3,tz:number):Vector3
 	const sin,cos=math.sin(tz),math.cos(tz)
-	return Vector3.new(cos*v.X-sin*v.X,v.Y*sin+v.Y*cos,v.Z)
+	return Vector3.new((cos * v.X) - (sin * v.Y), (sin * v.X) + (cos * v.Y), v.Z)
 end
 
 const function RotateAll(av:{Vector3},tx:number,ty:number,tz:number):{Vector3}
