@@ -5,5 +5,5 @@
 
 # License
 <p align="center">
-  EFSM is released under the <a href="LICENSE.md">MIT License</a>.
+  Wireframe is released under the <a href="LICENSE.md">MIT License</a>.
 </p>
